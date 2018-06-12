@@ -1,0 +1,13 @@
+name: Etdsolutions
+version: 0.1.0
+description: Starting Grav theme
+icon: rebel
+author:
+  name: ETD Solutions
+  email: contact@etd-solutions.com
+homepage: https://github.com/etd-framework/grav-theme-etdsolutions
+demo: https://github.com/etd-framework/grav-theme-etdsolutions
+keywords: grav, theme, etdsolutions
+bugs: https://github.com/etd-framework/grav-theme-etdsolutions/issues
+readme: https://github.com/etd-framework/grav-theme-etdsolutions/blob/master/README.md
+license: MIT

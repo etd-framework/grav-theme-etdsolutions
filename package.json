@@ -1,0 +1,61 @@
+{
+  "name": "@etd-framework/grav-theme-etdsolutions",
+  "version": "0.1.0",
+  "description": "Starting Grav theme",
+  "homepage": "https://github.com/etd-framework/grav-theme-etdsolutions",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/etd-framework/grav-theme-etdsolutions.git"
+  },
+  "scripts": {
+    "css": "npm-run-all --sequential css-compile css-prefix",
+    "css-compile": "node-sass --include-path node_modules/bootstrap/scss --output-style expanded --source-map true --source-map-contents true --precision 6 scss/ -o css/",
+    "css-prefix": "postcss --config postcss.config.js --replace \"css/*.css\"",
+    "js": "npm-run-all --sequential js-build-fa js-concat js-clean-fa",
+    "js-build-fa": "etdfabuilder -o js/fa-build.js",
+    "js-clean-fa": "rimraf js/fa-build.js",
+    "js-concat": "concat -o js/template.js node_modules/bootstrap/js/dist/util.js node_modules/vanilla-lazyload/dist/lazyload.transpiled.min.js node_modules/@fortawesome/fontawesome/index.js js/fa-build.js js/custom.js",
+    "watch": "npm-run-all --parallel watch-css watch-js",
+    "watch-css": "nodemon --ignore js/ -e scss -x \"npm run css\"",
+    "watch-js": "nodemon --ignore scss/ --ignore js/fa-build.js --ignore js/template.js -e js -x \"npm run js\""
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-brands": "^5.0.9",
+    "@fortawesome/fontawesome-free-regular": "^5.0.9",
+    "@fortawesome/fontawesome-pro-regular": "^5.0.9",
+    "autoprefixer": "^8.1.0",
+    "bootstrap": "^4.0.0",
+    "popper.js": "^1.12.9",
+    "concat": "^1.0.3",
+    "etdfabuilder": "git+ssh://git@github.com:etd-framework/etdfabuilder.git#0.0.4",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.1",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^5.0.0",
+    "rimraf": "^2.6.2",
+    "vanilla-lazyload": "^7.2.1"
+  },
+  "browserslist": [
+    "last 1 major version",
+    ">= 1%",
+    "Chrome >= 45",
+    "Firefox >= 38",
+    "Edge >= 12",
+    "Explorer >= 10",
+    "iOS >= 9",
+    "Safari >= 9",
+    "Android >= 4.4",
+    "Opera >= 30"
+  ],
+  "etdfabuilder": {
+    "pro-regular": [
+      "phone"
+    ],
+    "free-brands": [
+      "facebook-f",
+      "rebel"
+    ]
+  }
+}

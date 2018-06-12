@@ -1,0 +1,28 @@
+/**
+ * @package      Thème Grav pour le site web de l'Hôtel Najeti Lille Nord.
+ *
+ * @version      0.1.0
+ * @copyright    Copyright (C) 2018 ETD Solutions. All rights reserved.
+ * @license      Apache-2.0
+ * @author       ETD Solutions http://www.etd-solutions.com
+**/
+
+//
+// App
+// ---------------------------------------
+
+// Twitter Bootstrap
+// --------------------------
+@import "bootstrap";
+
+// Variables
+// --------------------------
+@import "variables";
+
+// Theme Bootstrap
+// --------------------------
+@import "bootstrap-theme";
+
+// Base
+// --------------------------
+@import "base";
