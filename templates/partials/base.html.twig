@@ -2,11 +2,6 @@
 {%- block stylesheets -%}
     {% do assets.addCss('theme://css/template.css', 100) %}
 {%- endblock -%}
-{%- block javascripts -%}
-    {% do assets.addJs('jquery', {'priority': 100, 'group': 'bottom'}) %}
-    {% do assets.addJs('popper', {'priority': 99, 'group': 'bottom'}) %}
-    {% do assets.addJs('theme://js/template.js', {'priority': 50, 'group': 'bottom'}) %}
-{%- endblock -%}
 <!--
     _____ _____ ____    ____   ___  _    _   _ _____ ___ ___  _   _ ____
    | ____|_   _|  _ \  / ___| / _ \| |  | | | |_   _|_ _/ _ \| \ | / ___|
@@ -67,6 +62,11 @@ Y  | |___  | | | |_| |  ___) | |_| | |__| |_| | | |  | | |_| | |\  |___) |
 {% endblock %}
 
 {% block bottom %}
+    {%- block javascripts -%}
+        {% do assets.addJs('jquery', {'priority': 100, 'group': 'bottom'}) %}
+        {% do assets.addJs('popper', {'priority': 99, 'group': 'bottom'}) %}
+        {% do assets.addJs('theme://js/template.js', {'priority': 50, 'group': 'bottom'}) %}
+    {%- endblock -%}
     {{- assets.js('bottom') -}}
 {% endblock %}
 
